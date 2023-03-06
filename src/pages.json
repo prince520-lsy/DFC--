@@ -7,6 +7,12 @@
 			}
 		},
 		{
+			"path": "pages/income/index",
+			"style": {
+				"navigationBarTitleText": "收入"
+			}
+		},
+		{
 			"path": "pages/login/login",
 			"style": {
 				"navigationBarTitleText": "登录",

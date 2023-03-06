@@ -8,33 +8,16 @@
 
 		<view class="input-group">
 			<view class="input-row border">
-				<text class="title">账号：</text>
+				<!-- <text class="title">账号：</text> -->
 				<m-input class="m-input" type="text" clearable focus v-model="username" placeholder="请输入账号"></m-input>
 			</view>
 			<view class="input-row border">
-				<text class="title">密码：</text>
+				<!-- <text class="title">密码：</text> -->
 				<m-input type="password" class="m-input" v-model="password" placeholder="请输入密码"></m-input>
 			</view>
-			<!-- <view v-if="needCaptcha" class="input-row">
-				<text class="title">验证码：</text>
-				<m-input type="text" v-model="captchaText" placeholder="请输入验证码"></m-input>
-				<view class="send-code-btn captcha-view" @click="captcha('refreshCaptcha')">
-					<i v-if="captchaing" class="uni-icon_toast uni-loading"></i>
-					<img v-if="!captchaing" :src="captchaBase64" width="100%" height="100%"></img>
-				</view>
-			</view> -->
+
 		</view>
-		<!-- <view class="input-group" v-else>
-			<view class="input-row border">
-				<text class="title">手机：</text>
-				<m-input class="m-input" type="text" clearable focus v-model="mobile" placeholder="请输入手机号码"></m-input>
-			</view>
-			<view class="input-row input-row2">
-				<text class="title">验证码：</text>
-				<m-input type="text" v-model="code" placeholder="请输入验证码"></m-input>
-				<view class="send-code-btn" @click="sendSmsCode">{{ codeDuration ? codeDuration + 's' : '发送验证码' }}</view>
-			</view>
-		</view> -->
+
 		<view class="btn-row">
 			<button type="primary" class="primary" :loading="loginBtnLoading" @tap="bindLogin">登录</button>
 		</view>
@@ -586,7 +569,7 @@ export default {
 	left: 0;
 	top: 0;
 	width: 320px;
-	height: 568px;
+	height: 650px;
 	vertical-align: bottom;
 }
 
@@ -611,7 +594,7 @@ export default {
 
 .input-group {
 	background-color: #030f7e;
-	margin-top: 180px;
+	margin-top: 222px;
 	width: 154px;
 	margin-left: 76px;
 	border-radius: 20px;

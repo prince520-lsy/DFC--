@@ -109,10 +109,12 @@ export default {
 }
 
 .m-input-input {
+	border: 1px solid #fff;
 	flex: 1;
 	width: 100%;
 	height: 20px;
 	line-height: 20px;
+	border-radius: 40px;
 	background-color: rgba(0, 0, 0, 0);
 }
 
