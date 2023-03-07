@@ -30,6 +30,7 @@
 </template>
   
 <script>
+
 import qiunDataCharts from '../../components/qiun-data-charts/qiun-data-charts.vue';
 export default {
     components: {
@@ -67,6 +68,7 @@ export default {
     },
     onReady() {
         this.getServerData();
+        this.getIncomeTable()
     },
     methods: {
         getServerData() {
@@ -89,6 +91,15 @@ export default {
                 this.chartData = JSON.parse(JSON.stringify(res));
             }, 500);
         },
+        getIncomeTable() {
+            uni.request({
+                url: 'https://bi.tongcaizh.com/api/form/Month',
+                success: (res) => {
+                    console.log("TableMonth", res.data);
+                    this.text = 'request success';
+                }
+            })
+        }
     }
 };
 </script>
