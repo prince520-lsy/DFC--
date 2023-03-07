@@ -3,13 +3,16 @@
 <template>
     <view>
 
-        <u-table>
+        <u-table border="1px solid black">
+            <caption>收入成本预算费用表</caption>
             <u-tr>
-                <u-th>学校</u-th>
-                <u-th>班级</u-th>
-                <u-th>年龄</u-th>
-            </u-tr>
-            <u-tr>
+                <u-th>项目</u-th>
+                <u-th>本期</u-th>
+                <u-th>去年同期</u-th>
+                <u-th>累计</u-th>
+                <u-th>去年同期累计</u-th>
+        </u-tr>
+        <!-- <u-tr>
                 <u-td>浙江大学</u-td>
                 <u-td>二年级</u-td>
                 <u-td>22</u-td>
@@ -17,14 +20,14 @@
             <u-tr>
                 <u-td>清华大学</u-td>
                 <u-td>05班</u-td>
-                <u-td>20</u-td>
-            </u-tr>
+                                                        <u-td>20</u-td>
+                                                    </u-tr> -->
         </u-table>
 
-        <view class="charts-box">
+    <!-- <view class="charts-box">
             <qiun-data-charts type="column" :opts="opts" :chartData="chartData" />
 
-        </view>
+                                                                </view> -->
 
     </view>
 </template>
@@ -99,6 +102,56 @@ export default {
                     this.text = 'request success';
                 }
             })
+            uni.request({
+                url: 'https://bi.tongcaizh.com/api/form/Profits',
+                success: (res) => {
+                    console.log("Profits", res.data);
+                    this.text = 'request success';
+                }
+            })
+            uni.request({
+                url: 'https://bi.tongcaizh.com/api/form/ProfitChartAnalysis',
+                success: (res) => {
+                    console.log("ProfitChartAnalysis", res.data);
+                    this.text = 'request success';
+                }
+            })
+            uni.request({
+                url: 'https://bi.tongcaizh.com/api/form/monthlyreport',
+                success: (res) => {
+                    console.log("monthlyreport", res.data);
+                    this.text = 'request success';
+                }
+            })
+            uni.request({
+                url: 'https://bi.tongcaizh.com/api/form/financialanalysis',
+                success: (res) => {
+                    console.log("financialanalysis", res.data);
+                    this.text = 'request success';
+                }
+            })
+            uni.request({
+                url: 'https://bi.tongcaizh.com/api/form/financialearlywarning',
+                success: (res) => {
+                    console.log("financialearlywarning", res.data);
+                    this.text = 'request success';
+                }
+            })
+            uni.request({
+                url: 'https://bi.tongcaizh.com/api/form/taxrisk',
+                success: (res) => {
+                    console.log("taxrisk", res.data);
+                    this.text = 'request success';
+                }
+            })
+            uni.request({
+                url: 'https://bi.tongcaizh.com/api/form/financialriskreport',
+                success: (res) => {
+                    console.log("financialriskreport", res.data);
+                    this.text = 'request success';
+                    console.log(this.$u.config.v);
+                }
+            })
         }
     }
 };
@@ -109,5 +162,15 @@ export default {
 .charts-box {
     width: 100%;
     height: 300px;
+}
+
+u-table {
+    border: 1px solid black;
+    width: 375px;
+
+    tr td {
+        display: flex;
+        justify-content: center;
+    }
 }
 </style>
